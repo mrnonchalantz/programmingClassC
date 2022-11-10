@@ -3,6 +3,8 @@
 Do calculate program again, now using calculate function. 
 Allowing subtraction, division, multiplication, addition.
 
+Thursday 10 November 2022
+
 *******************************************************************************/
 #include <iostream>
 
