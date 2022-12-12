@@ -1,0 +1,54 @@
+/******************************************************************************
+Thursday 26 Oct 2022
+
+Exercise 1
+
+A C++ program to calculate mobile phone bills. 
+A call is charged at 30 cents per minute. 
+The cost of line rental is RM39.90 per month, and the tax for the overall bill is 6%. 
+Calculate the total amount the user needs to pay to the Telco based on the number of minutes the user uses his or her mobile phone for calls each month. 
+Creatively do the input/output format of the program. 
+Do provide an option for the user to continue using the program.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double cPerMin = 0.3;
+    double cPerMonth = 39.9;
+    double tax = 0.06;
+    
+    int useMin;
+    
+    double tChargeMin, tChargeRent, tTax, tBill;
+    
+    int carryOn = 1;
+    
+    do
+    {
+        cout << "How many minutes in call do you use in one month? : ";
+        cin >> useMin;
+        
+        tChargeMin = useMin * cPerMin;
+        tChargeRent = tChargeMin * cPerMonth;
+        tTax = tChargeRent * tax;
+        
+        tBill = tChargeRent + tTax;
+        
+        cout << endl;
+        
+        cout << "Total bill excluded tax : RM" << tChargeRent << endl;
+        cout << "Total bill per month included tax : RM" << tBill << endl;
+        
+        cout << endl;
+        
+        cout << "Press and enter 1 to continue ";
+        cin >> carryOn;
+    }
+    while(carryOn == 1);
+    
+    return 0;
+}
