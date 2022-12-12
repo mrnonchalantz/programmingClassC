@@ -1,6 +1,8 @@
 /******************************************************************************
 Thursday 26 Oct 2022
 
+Exercise 1
+
 A C++ program to calculate mobile phone bills. 
 A call is charged at 30 cents per minute. 
 The cost of line rental is RM39.90 per month, and the tax for the overall bill is 6%. 
