@@ -1,0 +1,407 @@
+/******************************************************************************
+Thursday 26 Oct 2022
+
+Exercise 2
+
+A C++ program that calculates and prints a worker's salary slip for a specific month based on his or her earnings, 
+which include basic pay and allowance.
+
+11% of his/her pay will be deducted from the salary for the compulsory saving at the Employees’ 
+Provident Fund (EPF) and the company ABC Sdn. Bhd. shall top-up 13% of the salary to his/her EPF fund.
+
+Creatively do the input/output format of the program. 
+
+The following information should be provided in the salary slip: 
+
+Gross salary, 
+employee deduction amounts 
+net pay and 
+total EPF savings for 
+a particular month. 
+
+
+Do provide an option for the user to continue using the program.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    
+    float epf = 0.11;
+    float epfFund = 0.13;
+    
+    float bEarning;
+    float allowance;
+    
+    int carryOn = 1;
+    
+    float gSalary, eDeduction, nPay, tSaving, eAddition;
+    
+    do 
+    {
+        cout << "What is your basic earning : ";
+        cin >> bEarning;
+    
+        cout << "How much is your allowance : ";
+        cin >> allowance;
+    
+    
+        // Gross Salary
+        gSalary = bEarning + allowance;
+        
+        // EPF Deduction
+        eDeduction = gSalary * epf;
+        
+        // Net Pay
+        nPay = gSalary - eDeduction;
+        
+        // Total EPF Saving
+        eAddition = gSalary * epfFund;
+        tSaving = eDeduction + eAddition;
+    
+        cout << endl;
+    
+        cout << "Gross salary : " << gSalary << endl;
+        cout << "Employee deduction amounts : " << eDeduction << endl;
+        cout << "Net pay : " << nPay << endl;
+        cout << "Total EPF saving for this month : " << tSaving;
+        
+        cout << endl << endl;
+        
+        cout << "Press and 1 to continue, press and enter any to stop ";
+        cin >> carryOn;
+    }
+    while (carryOn == 1);
+    
+    return 0;
+}
+
+Dzulhelmy Nazri, [22/11/2022 8:49 PM]
+/******************************************************************************
+Exercise 1 - 26 Oct 22
+
+A C++ program to calculate mobile phone bills. 
+A call is charged at 30 cents per minute. 
+The cost of line rental is RM39.90 per month, and the tax for the overall bill is 6%. 
+Calculate the total amount the user needs to pay to the Telco based on the number of minutes the user uses his or her mobile phone for calls each month. 
+Creatively do the input/output format of the program. 
+Do provide an option for the user to continue using the program.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double cPerMin = 0.3;
+    double cPerMonth = 39.9;
+    double tax = 0.06;
+    
+    int useMin;
+    
+    double tChargeMin, tChargeRent, tTax, tBill;
+    
+    int carryOn = 1;
+    
+    do
+    {
+        cout << "How many minutes in call do you use in one month? : ";
+        cin >> useMin;
+        
+        tChargeMin = useMin * cPerMin;
+        tChargeRent = tChargeMin * cPerMonth;
+        tTax = tChargeRent * tax;
+        
+        tBill = tChargeRent + tTax;
+        
+        cout << endl;
+        
+        cout << "Total bill excluded tax : RM" << tChargeRent << endl;
+        cout << "Total bill per month included tax : RM" << tBill << endl;
+        
+        cout << endl;
+        
+        cout << "Press and enter 1 to continue ";
+        cin >> carryOn;
+    }
+    while(carryOn == 1);
+    
+    return 0;
+}
+
+Dzulhelmy Nazri, [24/11/2022 1:19 PM]
+/******************************************************************************
+Exercise - 17 Nov 22
+
+a. Ask user to determine the array size to store integer data.
+b. Ask user to enter the integers, based on (a).
+c. Print below menu and ask user to select:
+Choose an operation:
+(0) : Exit
+(1) : Print array
+(2) : Reverse array
+(3) : Ascending array
+(4) : Descending array
+
+d. Perform the operation selected by the user and display the results on the screen.
+e. Implement operation 1 until 4 in separate user-defined functions.
+
+*******************************************************************************/
+#include <iostream>
+#include <algorithm>
+
+int printArray(int sizeArray[]);
+int reverseArray(int sizeArray []);
+int ascendingArray(int sizeArray[]);
+int descendingArray(int sizeArray[]);
+
+using namespace std;
+
+int main()
+{
+    
+    int sizeArray[5];
+    int carryOn;
+    
+    do
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            cout << "Enter number: ";
+            cin >> sizeArray[i];
+        }
+        
+        cout << endl;
+        
+        // printArray
+        printArray(sizeArray);
+        
+        cout << endl;
+       
+        // reverseArray
+        reverseArray(sizeArray);
+        
+        cout << endl;
+        
+        // ascendingArray
+        ascendingArray(sizeArray);
+        
+        cout << endl;
+        
+        // descendingArray
+        descendingArray(sizeArray);
+        
+        cout << endl;
+        cout << endl;
+        
+        cout << "Press and enter 1 to continue : ";
+        cin >> carryOn;
+    }
+    while (carryOn == 1);
+   
+    return 0;
+}
+
+
+
+int printArray(int sizeArray[])
+{
+    for (int i = 0; i < 5; i++)
+    {
+        cout << " " << sizeArray[i];
+    }
+    return 0;
+}
+
+int reverseArray(int sizeArray[])
+{
+    for (int i = 5 - 1; i >= 0; i--)
+    {
+        cout << " " << sizeArray[i];
+    }
+    return 0;
+}
+
+int ascendingArray(int sizeArray[])
+{
+    sort(sizeArray, sizeArray + 5);
+    for (int i = 0; i < 5; i++)
+    {
+        cout << " " << sizeArray[i];
+    }
+    return 0;
+}
+
+int descendingArray(int sizeArray[])
+{
+    sort(sizeArray, sizeArray + 5);
+    for (int i = 5 - 1; i >= 0; i--)
+    {
+        cout << " " << sizeArray[i];
+    }
+    return 0;
+}
+
+Dzulhelmy Nazri, [2/12/2022 8:57 AM]
+/******************************************************************************
+Thursday - 01 Dec 2022
+
+Write a C++ program to perform the following:
+
+a. Ask user to determine the array size to store integer data.
+b. Ask user to enter the integers, based on (a).
+c. Print below menu and ask user to select:
+Choose an operation:
+(0) : Exit
+(1) : Print array
+(2) : Reverse array
+(3) : Sum and average array 
+(4) : Max value of array
+
+d. Perform the operation selected by the user and display the results on the screen.
+e. Implement operation 1 until 4 in separate user-defined functions.
+
+*******************************************************************************/
+#include <iostream>
+
+int print(int array[], int array_size);
+int reverse(int array[], int array_size);
+int sum_average(int array[], int array_size);
+int max(int array[], int array_size);
+int min(int array[], int array_size);
+
+using namespace std;
+
+int main()
+{
+    int i, array_size, sum = 0, option;
+    
+    cout << "Choose any one the following" << endl;
+    cout << "1. Display value" << endl;
+    cout << "2. Display value in reverse" << endl;
+    cout << "3. Display sum and average" << endl;
+    cout << "4. Display maximum value" << endl;
+    cout << "5. Display minimum value" << endl;
+    cout << endl;
+    cin >> option;
+    cout << endl;
+    
+    cout << "Enter size of the array : ";
+    cin >> array_size;
+    cout << endl;
+    
+    int array[array_size];
+    
+    for(i = 0; i < array_size; i++)
+    {
+        cout << "Enter a value : ";
+        cin >> array[i];
+    }
+    
+    if (option == 1)
+    {
+        print(array, array_size);
+    }
+    else if(option == 2)
+    {
+        reverse(array, array_size);
+    }
+    else if(option == 3)
+    {
+        sum_average(array, array_size);
+    }
+    else if(option == 4)
+    {
+        max(array, array_size);
+    }
+    else if(option == 5)
+    {
+        min(array, array_size);
+    }
+    else
+    {
+        cout << "Invalid output";
+    }
+    
+    return 0;
+}
+
+int print(int array[], int array_size) //print
+{
+    cout << endl;
+    
+    for(int i = 0; i < array_size; i++)
+    {
+        cout << array[i] << " ";
+    }
+    
+    return 0;
+}
+
+int reverse(int array[], int array_size) //reverse
+{
+    cout << endl;
+    
+    for (int i = array_size - 1; i >= 0; i--)
+    {
+        cout << array[i] << " ";
+    }
+    
+    return 0;
+}
+
+int sum_average(int array[], int array_size) //sum
+{
+    cout << endl;
+    
+    int sum;
+    
+    for(int i = 0; i < array_size; i++) 
+    {
+        sum = sum + array[i];
+    }
+    cout << sum << endl;
+    cout << sum / array_size << endl;
+    
+    return 0;
+}
+
+int max(int array[], int array_size) //max
+{
+    cout << endl;
+    
+    int max = array[0];
+    
+    for(int i = 0; i < array_size; i++) 
+    {
+        if(array[i] > max)
+        {
+            max = array[i];
+        }
+    }
+    cout << max << endl;
+    
+    return 0;
+}
+
+int min(int array[], int array_size) //min
+{
+    cout << endl;
+    
+    int min = array[0];
+    
+    for(int i = 0; i < array_size; i++) 
+    {
+        if(array[i] < min)
+        {
+            min = array[i];
+        }
+    }
+    cout << min << endl;
+    
+    return 0;
+}
