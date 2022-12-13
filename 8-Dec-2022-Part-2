@@ -1,0 +1,43 @@
+/******************************************************************************
+
+Thursday 8 Dec 2022
+Mockup Exam
+Question 2
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i;
+    char sentence[1000];
+    cout << "Enter your sentence: ";
+    cin.getline(sentence, 1000);
+    
+    int punct = 0, digit = 0, alpha = 0;
+    
+    for(i = 0; sentence[i] != '\0'; i++)
+    {
+        if(ispunct(sentence[i]))
+        {
+            punct++;
+        }
+        else if(isdigit(sentence[i]))
+        {
+            digit++;
+        }
+        else if(isalpha(sentence[i]))
+        {
+            alpha++;
+        }
+    }
+    
+    cout << "Your sentence contains: " << sentence << endl;
+    cout << "Alphabets: " << alpha << endl;
+    cout << "Digits: " << digit << endl;
+    cout << "Punctuation: " << punct << endl;
+
+    return 0;
+}
