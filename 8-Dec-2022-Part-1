@@ -1,0 +1,44 @@
+/******************************************************************************
+
+Thursday 8 Dec 2022
+Mockup Exam
+Question 1
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float cgpa;
+    string status;
+    
+    cout << "CGPA : ";
+    cin >> cgpa;
+    
+    if(cgpa > 3.00)
+    {
+        status = "Second Class Upper";
+        
+        if(cgpa > 3.75)
+        {
+            status = "First Class Degree";
+        }
+    }
+    else
+    {
+        if(cgpa > 2.00)
+        {
+            status = "Second Class Lower";
+        }
+        else
+        {
+            status ="Yet to complete";
+        }
+    }
+    
+    cout << "Status : " << status;
+
+    return 0;
+}
