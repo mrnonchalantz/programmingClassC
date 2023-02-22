@@ -1,0 +1,38 @@
+/*
+1. Write a C++ program that prompts the user for the radius of a circle, 
+then calls inline function circleArea () to calculate the area of that circle.
+*/
+
+#define _USE_MATH_DEFINES
+#include<cmath>
+
+#include <iostream>
+
+using namespace std;
+
+//global
+int radius;
+double area;
+
+//prototype
+double circleArea();
+
+int main()
+{
+    
+    cout << "Enter radius ";
+    cin >> radius;
+    
+    circleArea();
+
+    return 0;
+}
+
+double circleArea(){
+    
+    area = M_PI * radius * radius;
+    
+    cout << "Area is " << area;
+    
+    return 0;
+}
