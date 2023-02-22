@@ -17,18 +17,18 @@ and triples the original value of count through its alias (function call by refe
 
 using namespace std;
 
-// Function to triple the value of a variable passed by value
+//value
 int tripleByValue(int count) {
     count *= 3;
     return count;
 }
 
-// Function to triple the value of a variable passed by reference
+//reference
 void tripleByReference(int &count) {
     count *= 3;
 }
 
-// Function to triple the value of a variable passed by alias (reference parameter)
+//reference parameter
 void tripleByAlias(int &alias) {
     alias *= 3;
 }
@@ -36,15 +36,15 @@ void tripleByAlias(int &alias) {
 int main() {
     int count = 10;
 
-    // Tripling the value of count using function call by value
+    //value
     int result1 = tripleByValue(count);
     cout << "Using function call by value, count is now " << count << " and result1 is " << result1 << endl;
 
-    // Tripling the value of count using function call by reference
+    //reference
     tripleByReference(count);
     cout << "Using function call by reference, count is now " << count << endl;
 
-    // Tripling the value of count using function call by reference (alias)
+    //reference (alias)
     tripleByAlias(count);
     cout << "Using function call by reference (alias), count is now " << count << endl;
 
