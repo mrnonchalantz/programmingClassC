@@ -1,0 +1,87 @@
+/*
+
+3. Write a program that calls a/few function(s) 
+to determine the smaller of two arguments. 
+Test the program using integer, character and floating-point number arguments. 
+Produce 3 separate programs solving the problem above. 
+The three approaches you should be using are:
+
+a) 3 different functions (findMinimum1(), findMinimum2(), findMinimum3()), 
+each to solve different data types parameters.
+
+b) Function overloading with only one function named findMinimum( )
+
+c) Function template with only one function named findMinimum( )
+
+#include <iostream>
+using namespace std;
+
+int findMinimum1(int a, int b) {
+    return (a < b ? a : b);
+}
+
+char findMinimum2(char a, char b) {
+    return (a < b ? a : b);
+}
+
+float findMinimum3(float a, float b) {
+    return (a < b ? a : b);
+}
+
+int main() {
+    int int1 = 5, int2 = 3;
+    char char1 = 'b', char2 = 'a';
+    float float1 = 2.5, float2 = 1.2;
+    cout << "Minimum of " << int1 << " and " << int2 << " is " << findMinimum1(int1, int2) << endl;
+    cout << "Minimum of " << char1 << " and " << char2 << " is " << findMinimum2(char1, char2) << endl;
+    cout << "Minimum of " << float1 << " and " << float2 << " is " << findMinimum3(float1, float2) << endl;
+    return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+int findMinimum(int a, int b) {
+    return (a < b ? a : b);
+}
+
+char findMinimum(char a, char b) {
+    return (a < b ? a : b);
+}
+
+float findMinimum(float a, float b) {
+    return (a < b ? a : b);
+}
+
+int main() {
+    int int1 = 5, int2 = 3;
+    char char1 = 'b', char2 = 'a';
+    float float1 = 2.5, float2 = 1.2;
+    cout << "Minimum of " << int1 << " and " << int2 << " is " << findMinimum(int1, int2) << endl;
+    cout << "Minimum of " << char1 << " and " << char2 << " is " << findMinimum(char1, char2) << endl;
+    cout << "Minimum of " << float1 << " and " << float2 << " is " << findMinimum(float1, float2) << endl;
+    return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+template <typename T>
+T findMinimum(T a, T b) {
+    return (a < b ? a : b);
+}
+
+int main() {
+    int int1 = 5, int2 = 3;
+    char char1 = 'b', char2 = 'a';
+    float float1 = 2.5, float2 = 1.2;
+    cout << "Minimum of " << int1 << " and " << int2 << " is " << findMinimum(int1, int2) << endl;
+    cout << "Minimum of " << char1 << " and " << char2 << " is " << findMinimum(char1, char2) << endl;
+    cout << "Minimum of " << float1 << " and " << float2 << " is " << findMinimum(float1, float2) << endl;
+    return 0;
+}
+*/
