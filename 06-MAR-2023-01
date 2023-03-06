@@ -1,0 +1,38 @@
+/*
+
+Array in C++ is similar with array in C.
+
+#include <iostream> 
+using namespace std; 
+
+void main()
+{
+    int arr[] = { 2,4,6,8,10 }; 
+    int n, result = 0;
+    
+    for (n = 0; n < 5; ++n) 
+    {
+        result += arr[n]; 
+    }
+
+    cout << "The result is :" << result; 
+    system("pause");
+}
+
+*/
+
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {2, 4, 6, 8, 10};
+    int n, result = 0;
+    
+    for (n = 0; n < 5; ++n) {
+        result += arr[n];
+    }
+    
+    printf("The result is: %d", result);
+    
+    return 0;
+}
