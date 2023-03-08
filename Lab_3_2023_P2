@@ -1,0 +1,113 @@
+/*
+Problem 1
+Write a program that consists of the following new structure;
+
+Structure Name: Student
+Content of the structure: student ID, student name, nickname
+
+The program should ask the user to enter the details. 
+
+The program should be able to store maximum 5 students’ data at a time. 
+Finally, the program will display the details entered by the user correctly.
+
+[Hint: array]
+
+
+
+
+Problem 2
+Based on Problem 1, write a program that consists of the following new structure;
+
+Structure Name: Course
+Content of the structure: course code, course name, lecturer name
+
+The program should ask the user to enter the details of each of the course. 
+The program should be able to store maximum 2 courses’ data at a time. 
+Finally, the program will display the details entered by the user correctly. 
+
+[Hint: array]
+*/
+
+
+
+#include <iostream>
+using namespace std;
+
+//Problem 1
+struct Student {
+    int id;
+    string name;
+    string nickname;
+};
+
+//Problem 2
+struct Course {
+    string code;
+    string name;
+    string lecturer;
+};
+
+int main() 
+{
+    /////////////Problem 1 CIN//////////////
+    Student students[5];
+    
+    // Get input from user for each student
+    for (int i = 0; i < 5; i++) 
+    {
+        cout << "Enter details for student " << i + 1 << endl;
+        cout << "ID: ";
+        cin >> students[i].id;
+        cin.ignore(); // ignore newline character from previous input
+        cout << "Name: ";
+        getline(cin, students[i].name);
+        cout << "Nickname: ";
+        getline(cin, students[i].nickname);
+        cout << endl;
+    }
+    
+    /////////////Problem 2 CIN//////////////
+    Course courses[2];
+    
+    // Get input from user for each course
+    for (int i = 0; i < 2; i++) 
+    {
+        cout << "Enter details for course " << i + 1  << endl;
+        cout << "Code Course: ";
+        getline(cin, courses[i].code);
+        cout << "Name Course: ";
+        getline(cin, courses[i].name);
+        cout << "Lecturer: ";
+        getline(cin, courses[i].lecturer);
+        cout << endl;
+    }
+    
+    /////////////Problem 1 COUT//////////////
+    // Display details for each student
+    cout << endl << "Student Details" << endl;
+    
+    for (int i = 0; i < 5; i++) 
+    {
+        cout << "Student " << i + 1 << endl;
+        cout << "ID: " << students[i].id << endl;
+        cout << "Name: " << students[i].name << endl;
+        cout << "Nickname: " << students[i].nickname << endl;
+        cout << endl;
+    }
+    
+    /////////////Problem 2 COUT//////////////
+    // Display details for each course
+    cout << endl << "Course Details" << endl;
+    
+    for (int i = 0; i < 2; i++) 
+    {
+        cout << "Course " << i + 1 << endl;
+        cout << "Code: " << courses[i].code << endl;
+        cout << "Name: " << courses[i].name << endl;
+        cout << "Lecturer: " << courses[i].lecturer << endl;
+        cout << endl;
+    }
+    
+    return 0;
+}
+
